@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Proteen 교수 공유 커뮤니티</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing:border-box;
+    }
+    body {
+        background:#f9f9f9;
+    }
+    a:link, a:visited {
+        color:#fff;
+        text-decoration:none;
+    }
+    a:hover{
+        color:#666;
+    }
+    .box {
+        margin:0px;
+        padding:10px;
+    }
+    #container h1 {
+        margin-bottom: 15px;
+        height: 60px;
+    }
+    body, div, h1, h2, ol, ul, li, form, th, td, input{
+        color: #666;
+        font-family: "맑은 고딕", 돋움, tahoma;
+        _font-family: 돋움, tahoma;
+        font-size: 12px;
+        letter-spacing: -0.5px;
+    }
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+    nav {
+        width:100%;
+        height:auto;
+        background:#246c84;
+        font-size:1.2em;
+        font-weight:bold;
+        position:relative;
+    }
+    nav ul li {
+        display: block;
+        width:100%;
+        text-align:center;
+        border-bottom:1px solid #fff;
+    }
+     
+    @media screen and (max-width:720px){
+        nav ul {
+            display:none;
+            height:auto;
+        }
+        nav ul li a {
+            line-height:50px;
+        }
+        nav a#trigger {
+            display:block;
+            background-color:#246c84;
+            width:100%;
+            padding-left:15px;
+            line-height:40px;
+            position:relative
+        }
+        nav a#trigger::after {
+            content:"";
+            background:url(nav.png) no-repeat;
+            width:30px;
+            height:30px;
+            display:inline-block;
+            position:absolute;
+            right:15px;
+            top:10px
+        }
+        .search_box {
+            display:none;
+        }
+        .text_box {
+            display:none;
+        }   
+    }
+
+    @media screen and (min-width:721px){
+        .search_box {
+            display:flex;
+            flex-flow:row-reverse;
+            width: 57%;
+            margin-left: 43%;
+            margin-bottom: 10px;
+            margin-top: -50px;
+            align-items:center;
+            padding:10px;
+            color:#053649;
+            font-size: 17.5px;
+            font-weight: 600;
+        }
+        .text_box {
+            flex:2 2 0;
+            height: 25px;
+            margin-left:10px;
+            border-color: #053649;
+            border-style:solid;
+        }
+        nav{
+            height:40px;
+            border-bottom:2px solid #fff;
+        }
+        nav ul {
+            display:flex;
+            width:725px;
+            height:40px;
+            padding:0;
+            margin:0 auto;
+            justify-content:center;
+        }
+        nav ul li {
+            display:inline-block;
+            width:180px;
+            border-bottom:0;
+            border-right:1px solid #fff;
+            margin-right:-1px;
+        }
+        nav ul li:last-child {
+            border-right: 0;
+        }
+        nav ul li a {
+            font-size:1em;
+            line-height:40px;
+        }
+        
+        nav a#trigger{
+            display: none;
+        }
+    }
+   
+    </style>
+    </head>
+    <body>
+        <div class="box">        
+            <h1><img src="logo.png" width="20" height="20"> Proteen 교수 공유 커뮤니티</h1>
+            <div class="search_box">
+                <input type="text" id="this_Proteen_search" name="SearchText" class="text_box" title="Proteen에서 검색" autocomplete="off" onclick="clickcr(this,'flt.search','','',event);">
+                <i class="icon_search sp_blog"></i>
+                    <label>Proteen에서 검색</label>
+                    <label id="this_blog_search_placeholder" for="this_blog_search" class="label_text_box" style="display: inline;"></label>
+                    <div id="autocomplete_layer" class="autocomplete_layer" style="display: none">
+                        <ul class="list_autocomplete"></ul>
+                    </div>
+            </div>
+        </div>
+            <nav>
+            <ul>
+                <li><a href="인기게시글.html" target="_blank">인기게시판</a></li>
+                <li><a href="학술게시판.html" target="_blank">학술게시판</a></li>
+                <li><a href="정보게시판.html" target="_blank">정보게시판</a></li>
+                <li><a href="장터게시판.html" target="_blank">장터게시판</a></li>
+                <li><a href="음식게시판.html" target="_blank">음식게시판</a></li>
+                <li><a href="자유게시판.html" target="_blank">자유게시판</a></li>
+            </ul>
+            <a href="#" id="trigger">MENU</a>
+        </nav>
+    <section>
+        <article>다른 SNS 계정으로 회원가입하기</article>
+        <div class="btn_sns">
+            <img hight="50" width="50" style="vertical-align:left;" src="이미지 링크">
+            <!--이미지 크기랑 style은 내 임의대로 정한거라 수진이가 바꿔줘! :)-->
+            <a href="#" onclick="javascript:facebooklogin('join');" style="color:black">페이스북계정으로 가입</a></a style> 
+            <span class="ico_sns"><img src="/design/images/common/ico_sns_f.png" alt=""></span>
+        </div>
+        <div class="btn_sns">
+            <img hight="50" width="50" style="vertical-align:left;" src="이미지 링크">
+            <!--이미지 크기랑 style은 내 임의대로 정한거라 수진이가 바꿔줘! :)-->
+            <a href="#" onclick="naverLoginAPI();" style="color:black">네이버계정으로 가입</a>
+            <span class="ico_sns"><img src="/design/images/common/ico_sns_n.png" alt=""></span>
+        </div>
+        <div class="btn_sns">
+            <img hight="50" width="50" style="vertical-align:left;" src="이미지 링크">
+            <!--이미지 크기랑 style은 내 임의대로 정한거라 수진이가 바꿔줘! :)-->
+            <a href="#" onclick="javascript:kakaoLogin();" style="color:black">카카오톡계정으로 가입</a>
+            <span class="ico_sns"><img src="/design/images/common/ico_sns_k.png" alt=""></span>
+        </div>
+        <div class="btn_sns">
+            <img hight="50" width="50" style="vertical-align:left;" src="이미지 링크">
+            <!--이미지 크기랑 style은 내 임의대로 정한거라 수진이가 바꿔줘! :)-->
+            <a href="#" onclick="javascript:googleLogin();" style="color:black">구글계정으로 가입</a>
+            <span class="ico_sns"><img src="/design/images/common/ico_sns_k.png" alt=""></span>
+        </div>
+    </section>
+    <section>
+        <article><a href="일반 회원가입하기.html" target="_ self" style="color:black">일반 회원가입하기</a></article>
+    </section>
+    <script src="jquery-2.2.4.min.js"></script>
+    <script>
+        $(function(){
+            var trigger=$('#trigger');
+            var menu=$('nav ul');
+            $(trigger).on('click',function(e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+            $(window).resize(function(){
+                var w=$(window).width();
+                if(w>320&&menu.is(':hidden')){
+                    menu.removeAttr('style')
+                }
+            });
+        });
+    </script>
+</body>
+</html>
